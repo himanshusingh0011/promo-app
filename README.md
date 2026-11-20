@@ -51,8 +51,8 @@ Upload `.txt` files or a `.zip`, choose AI or offline, and optionally paste your
 
 ```bash
 python -m promo eval make --input data/show1 --ai outputs/ai/promos.json --rules outputs/offline/promos.json
-# rate eval/runs/blind_sheet.csv (AI, rules and random clips shuffled, labels hidden)
-python -m promo eval score     # would-post rate per system + 95% CI of the difference
+python -m promo eval page      # local page to rate the shuffled clips (labels hidden); downloads blind_sheet_rated.csv
+python -m promo eval score --sheet path/to/blind_sheet_rated.csv   # would-post rate per system + 95% CI
 python -m promo eval judge     # same blind set rated by a cold-reader model
 python -m promo eval reference --input data/show1   # AI vs rules vs random against eval/runs/reference_labels.json
 python -m unittest discover -s tests -v

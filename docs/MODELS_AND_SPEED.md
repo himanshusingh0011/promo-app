@@ -29,17 +29,17 @@ Free-tier gotchas I hit: `gemini-2.5-flash` is closed to new keys (404); `gemini
 | Offline rules | < 5 s | none | Baseline. Weaker picks (see the evaluation) |
 | Cerebras free | ~2–4 min | 2 min, key only | Very fast generation. Cap is about 1M tokens a day, enough for ~15 shows |
 | Gemini free, `LLM_BATCH=10` | **~1.5 min (measured)** | 2 min, key only, no card | 5 calls in total. Free limits change often |
-| V100 32 GB, Ollama, `qwen3:30b-a3b-instruct-2507-q4_K_M` | ~6–10 min one call at a time, ~3–5 min with 4 parallel | ~20 min | No rate limits. Data never leaves your machine |
+| Self-hosted 32 GB GPU, Ollama, `qwen3:30b-a3b-instruct-2507-q4_K_M` (not tested) | ~6–10 min one call at a time, ~3–5 min with 4 parallel | ~20 min | No rate limits. Data never leaves the company's servers |
 | Groq free | ~12–25 min | key only | Per-minute token cap is the bottleneck |
 
 These are estimates based on token counts and typical speeds, not benchmarks. The real run time is printed in `run_log.txt` and `report.md`.
 
-## Is the V100 worth it?
+## Is self-hosting worth it?
 
-- **For this one show:** a free Cerebras or Gemini key is quicker to set up and about as fast.
-- **Where it wins:** (1) confidentiality, because the screenplays never leave your server; (2) no daily caps, so you can re-run as often as you like while tuning or evaluating; (3) cost at scale, because one GPU can process roughly 300–500 shows a day, far more than Kuku releases.
+- **For one show:** a free Cerebras or Gemini key is quicker to set up and about as fast.
+- **Where a company GPU server wins:** (1) confidentiality, because the screenplays never leave the company; (2) no daily caps, so you can re-run as often as you like while tuning or evaluating; (3) cost at scale, because one GPU can process roughly 300–500 shows a day, far more than Kuku releases.
 
-**V100 setup (Ollama):**
+**Self-hosted setup (Ollama). I did not test this; it is how the same code would run on a GPU server:**
 
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
@@ -50,7 +50,7 @@ ollama pull qwen3:30b-a3b-instruct-2507-q4_K_M     # ~19 GB, fits in 32 GB with 
 # alternatives: gpt-oss:20b (~14 GB), qwen2.5:32b-instruct-q4_K_M (stronger writing, ~3x slower)
 ```
 
-Either run the CLI on the server, or tunnel the port from your PC with `ssh -L 11434:localhost:11434 user@server` and set `LLM_BASE_URL=http://localhost:11434/v1`. The V100 has no bfloat16 or FlashAttention 2. Ollama handles that automatically. With vLLM, use `--dtype half`.
+Either run the CLI on the server, or tunnel the port from your PC with `ssh -L 11434:localhost:11434 user@server` and set `LLM_BASE_URL=http://localhost:11434/v1`. Older GPUs without bfloat16 or FlashAttention 2 work too: Ollama handles that automatically, and with vLLM use `--dtype half`.
 
 The Vercel app can't reach a GPU behind your network. Use a hosted key there, or expose the server through a tunnel with a password.
 

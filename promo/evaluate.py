@@ -146,3 +146,82 @@ def judge(cfg) -> dict:
         {"summary": out, "clips": {c["id"]: {"system": key[c["id"]], **(c.get("cold") or {})} for c in cands}},
         indent=2, ensure_ascii=False), encoding="utf-8")
     return out
+
+
+PAGE = r"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blind Clip Rating</title><style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1d1f;--mut:#6b6b70;--line:#e2e0da;--acc:#9a5b2e;--sel:#f3e6dc}
+@media (prefers-color-scheme:dark){:root{--bg:#141414;--card:#1e1e1e;--ink:#eee;--mut:#9a9a9a;--line:#333;--acc:#d08a55;--sel:#3a2a1f}}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+pre{white-space:pre-wrap;font:14px/1.55 ui-monospace,Consolas,monospace;margin:0}
+.q{margin:14px 0}.q b{display:block;margin-bottom:6px}
+button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:7px 14px;cursor:pointer;margin:0 6px 6px 0}
+button.on{background:var(--sel);border-color:var(--acc)}button.main{background:var(--acc);color:#fff;border-color:var(--acc)}
+.mut{color:var(--mut)}textarea{width:100%;box-sizing:border-box;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px}
+.bar{height:6px;background:var(--line);border-radius:3px}.bar i{display:block;height:100%;background:var(--acc);border-radius:3px}
+.nav{display:flex;justify-content:space-between;flex-wrap:wrap}
+</style></head><body><main>
+<h2 style="margin:0">Blind clip rating</h2>
+<p class="mut">Each clip is a promo idea for a short drama. Imagine you are scrolling Instagram and know nothing about the show. Read the transcript (timestamps are seconds into the episode) and answer quickly, going with your first instinct.</p>
+<div class="bar"><i id="bar"></i></div><p class="mut" id="pos"></p>
+<div class="card"><div class="mut" id="meta"></div><pre id="tx"></pre></div>
+<div class="card" id="qs"></div>
+<div class="nav"><div><button id="prev">&larr; Back</button><button id="next" class="main">Next &rarr;</button></div>
+<div><button id="dl">Download ratings CSV</button></div></div>
+<p class="mut" id="msg"></p>
+</main><script>
+const ITEMS = __ITEMS__;
+const Q = [["would_post (y/n)","Would you post this as an ad for the show?",["y","n"]],
+ ["makes_sense_alone (y/n)","Does it make sense with no backstory?",["y","n"]],
+ ["hook_3s (1-5)","Do the first 3 seconds make you stop scrolling? (1 = no, 5 = definitely)",["1","2","3","4","5"]],
+ ["ends_unresolved (y/n)","Does it end on an unresolved moment (you want to know what happens next)?",["y","n"]]];
+let R = {}; try { R = JSON.parse(localStorage.getItem("blind_ratings") || "{}"); } catch (e) {}
+let i = 0;
+const $ = id => document.getElementById(id);
+function save(){ try { localStorage.setItem("blind_ratings", JSON.stringify(R)); } catch (e) {} }
+function done(c){ const r = R[c] || {}; return Q.every(q => r[q[0]]); }
+function show(){
+  const it = ITEMS[i], r = R[it.clip] = R[it.clip] || {};
+  $("pos").textContent = `Clip ${i+1} of ${ITEMS.length} · ${ITEMS.filter(x=>done(x.clip)).length} fully rated`;
+  $("bar").style.width = (100*ITEMS.filter(x=>done(x.clip)).length/ITEMS.length) + "%";
+  $("meta").textContent = `${it.clip} · ${it.seconds} s`;
+  $("tx").textContent = it.transcript;
+  $("qs").innerHTML = "";
+  for (const [col, label, opts] of Q) {
+    const d = document.createElement("div"); d.className = "q"; d.innerHTML = `<b>${label}</b>`;
+    for (const o of opts) { const b = document.createElement("button"); b.textContent = o === "y" ? "Yes" : o === "n" ? "No" : o;
+      if (r[col] === o) b.className = "on";
+      b.onclick = () => { r[col] = o; save(); show(); }; d.appendChild(b); }
+    $("qs").appendChild(d);
+  }
+  const n = document.createElement("div"); n.className = "q"; n.innerHTML = "<b>Notes (optional)</b>";
+  const t = document.createElement("textarea"); t.rows = 2; t.value = r.notes || ""; t.oninput = () => { r.notes = t.value; save(); };
+  n.appendChild(t); $("qs").appendChild(n);
+  $("prev").disabled = i === 0; $("next").textContent = i === ITEMS.length-1 ? "Finish" : "Next →";
+  window.scrollTo(0, 0);
+}
+$("prev").onclick = () => { if (i > 0) { i--; show(); } };
+$("next").onclick = () => { if (!done(ITEMS[i].clip)) { $("msg").textContent = "Please answer all four questions first."; return; }
+  $("msg").textContent = ""; if (i < ITEMS.length-1) { i++; show(); } else { $("msg").textContent = "All done. Click 'Download ratings CSV'."; } };
+$("dl").onclick = () => {
+  const cols = ["clip", ...Q.map(q => q[0]), "notes"];
+  const esc = v => '"' + String(v ?? "").replace(/"/g, '""') + '"';
+  const lines = [cols.join(","), ...ITEMS.map(it => { const r = R[it.clip] || {}; return [it.clip, ...Q.map(q => r[q[0]] || ""), r.notes || ""].map(esc).join(","); })];
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["﻿" + lines.join("\n")], {type: "text/csv"}));
+  a.download = "blind_sheet_rated.csv"; a.click();
+  $("msg").textContent = `${ITEMS.filter(x=>done(x.clip)).length} of ${ITEMS.length} clips rated. Saved as blind_sheet_rated.csv in your Downloads folder.`;
+};
+show();
+</script></body></html>"""
+
+
+def rating_page(sheet: Path = RUNS / "blind_sheet.csv") -> Path:
+    """Local, offline page to rate the blind sheet one clip at a time. No system labels inside."""
+    rows = list(csv.DictReader(open(sheet, encoding="utf-8-sig")))
+    items = [{"clip": r["clip"], "seconds": r["seconds"], "transcript": r["transcript"]} for r in rows]
+    out = RUNS / "rate_clips.html"
+    data = json.dumps(items, ensure_ascii=False).replace("</", "<\\/")
+    out.write_text(PAGE.replace("__ITEMS__", data), encoding="utf-8")
+    return out

@@ -56,11 +56,12 @@ def main(argv=None):
     r.add_argument("--no-cache", action="store_true")
     sub.add_parser("check-llm", help="send one tiny request to test your settings")
     ev = sub.add_parser("eval", help="blind evaluation: ai vs rules vs random")
-    ev.add_argument("action", choices=["make", "score", "judge", "reference"])
+    ev.add_argument("action", choices=["make", "page", "score", "judge", "reference"])
     ev.add_argument("--input", nargs="+", help="episodes (for random baseline windows)")
     ev.add_argument("--ai", default="outputs/ai/promos.json")
     ev.add_argument("--rules", default="outputs/offline/promos.json")
     ev.add_argument("-n", type=int, default=12, help="clips per system")
+    ev.add_argument("--sheet", default="eval/runs/blind_sheet.csv", help="rated sheet for eval score")
     a = ap.parse_args(argv)
 
     cfg = from_env()
@@ -88,8 +89,10 @@ def main(argv=None):
             Path("eval/runs").mkdir(parents=True, exist_ok=True)
             Path("eval/runs/reference_results.json").write_text(json.dumps(res, indent=2), encoding="utf-8")
             print(json.dumps(res, indent=2))
+        elif a.action == "page":
+            print("open in your browser:", evaluate.rating_page().resolve())
         elif a.action == "score":
-            print(json.dumps(evaluate.score(), indent=2))
+            print(json.dumps(evaluate.score(Path(a.sheet)), indent=2))
         else:
             if not cfg.judge.enabled:
                 sys.exit("set JUDGE_* or LLM_* in .env")

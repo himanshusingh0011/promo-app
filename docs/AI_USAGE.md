@@ -19,4 +19,8 @@
 7. **A retired model.** The default `gemini-2.5-flash` returned 404 for new keys, and `gemini-3.8-flash` returned 503 (overloaded). Switching to `gemini-3.6-flash` was a one-line `.env` change, which shows that swapping models really is easy.
 
 ## One bad pick the AI made (from the real run)
-Promo **#4** (E2 00:53–01:48) ends on Juliana's dignified *"...I will not leave it believing I was the one who should be ashamed."* The AI scored that line 9/10 as a cliffhanger, but it resolves the scene: the cold reader marked it `ends_unresolved: false`, and none of my flags caught it. The model confuses a satisfying emotional win with suspense. Next step: add a "does the next line answer this?" check, or ask the scorer separately whether a line resolves tension.
+Promo **#4** (E2 00:53–01:48) ends on the heroine's dignified closing speech The AI scored that line 9/10 as a cliffhanger, but it resolves the scene: the cold reader marked it `ends_unresolved: false`, and none of my flags caught it. The model confuses a satisfying emotional win with suspense. Next step: add a "does the next line answer this?" check, or ask the scorer separately whether a line resolves tension.
+
+## What the human blind rating added
+In the human test, the scorer's **#2** pick (the Episode 1 wedding betrayal) was the only AI clip I would not post, with a hook of 1/5. The moment is right, but the clip opens on a line starting with "Because…" and leaves out the question it answers. The pronoun-open flag only checks he/she/that, so it missed this. The fix is to start one line earlier when the hook line is an answer. The #4 pick above was judged differently by people: the model judge called its ending resolved, but the human called it unresolved and would post it.
+
