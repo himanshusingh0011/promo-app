@@ -1,0 +1,142 @@
+EPISODE NUMBER: Episode 2
+EPISODE LOGLINE: The guests learn Mara is the missing Sterling heiress, and Vivian swears to expose her as a fraud before the night is over.
+CONTINUITY NOTES: Made-up sample for testing.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. GRAND HOTEL BALLROOM - NIGHT
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Wide shot of the frozen ballroom, every face turned toward Mara.
+
+**VIVIAN (Hysterical, Laughing):**
+Start: (00:00.50) | End: (00:04.50)
+"Sterling? She's a liar! The Sterling girl died in that fire!"
+
+**CAMERA:**
+Start: (00:04.50) | End: (00:07.00)
+Close-up on Mara, her hand going to a burn scar on her wrist.
+
+**ACTION:**
+Start: (00:05.00) | End: (00:07.00)
+Mara pulls her sleeve down over the scar.
+
+**MARA (Shaken, Whispering):**
+Start: (00:07.50) | End: (00:09.50)
+"How do you know my name?"
+
+**HALE (Calm):**
+Start: (00:10.00) | End: (00:13.00)
+"Your grandfather never stopped looking for you."
+
+**CAMERA:**
+Start: (00:13.00) | End: (00:16.00)
+Medium shot of Ethan stepping forward, forcing a smile.
+
+**ETHAN (Nervous, Charming):**
+Start: (00:14.00) | End: (00:17.50)
+"Mara, sweetheart. I always knew you were special."
+
+**ACTION:**
+Start: (00:18.00) | End: (00:19.50)
+Mara slaps Ethan hard across the face.
+
+**SOUND FX:**
+Start: (00:18.20) | End: (00:19.00)
+A loud crack of the slap echoes through the silent room.
+
+**CAMERA:**
+Start: (00:19.50) | End: (00:22.00)
+Close-up on Ethan holding his cheek in disbelief.
+
+**MARA (Furious, Cold):**
+Start: (00:20.00) | End: (00:22.50)
+"Ten minutes ago I was beneath you."
+
+**MARA (Furious, Cold):**
+Start: (00:23.00) | End: (00:25.00)
+"Now I'm your sweetheart?"
+
+**CAMERA:**
+Start: (00:25.00) | End: (00:28.00)
+Medium shot of the guests murmuring, phones raised and recording.
+
+**VIVIAN (Venomous, Threatening):**
+Start: (00:28.50) | End: (00:32.00)
+"Enjoy it while it lasts. I'll prove you're a fraud."
+
+SCENE 02
+Scene heading: INT. HOTEL CORRIDOR - NIGHT
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:33.00) | End: (00:37.00)
+Low-angle shot of Vivian storming down a dim corridor, phone at her ear.
+
+**VIVIAN (Low, Urgent):**
+Start: (00:36.00) | End: (00:40.00)
+"The DNA records from the fire. I need them destroyed by morning."
+
+**UNKNOWN VOICE (V.O.) (Calm, Menacing):**
+Start: (00:40.50) | End: (00:44.00)
+"That will cost you more than money, Vivian."
+
+**CAMERA:**
+Start: (00:44.00) | End: (00:47.00)
+Close-up on Vivian hesitating, then nodding.
+
+**VIVIAN (Determined):**
+Start: (00:45.00) | End: (00:46.50)
+"Whatever it takes."
+
+SCENE 03
+Scene heading: INT. HOTEL SUITE - NIGHT
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:48.00) | End: (00:51.00)
+Wide shot of a luxurious suite; Mara stands at the window.
+
+**HALE (Gentle):**
+Start: (00:49.00) | End: (00:52.50)
+"You should rest. Tomorrow you meet your grandfather."
+
+**MARA (Uncertain):**
+Start: (00:53.00) | End: (00:55.00)
+"What if he doesn't believe me?"
+
+**CAMERA:**
+Start: (00:55.00) | End: (00:58.00)
+Close-up on Hale, something unreadable in his eyes.
+
+**HALE (Quiet):**
+Start: (00:56.00) | End: (00:58.00)
+"He will. I made sure of it."
+
+**ACTION:**
+Start: (00:58.50) | End: (01:02.00)
+Hale leaves. Mara notices an envelope on the table with her real name on it.
+
+**ACTION:**
+Start: (01:02.00) | End: (01:07.00)
+Mara opens it and finds a photo of herself as a child, standing in front of the burning house, with Hale beside her.
+
+**MARA (Horrified, Whispering):**
+Start: (01:07.00) | End: (01:10.00)
+"He was there... the night of the fire?"
+
+**SOUND FX:**
+Start: (01:10.00) | End: (01:11.50)
+A sharp ominous string sting; the lights flicker.
+
+**CAMERA:**
+Start: (01:10.00) | End: (01:12.00)
+Push-in on the photo. Cut to black.
+
+--- SCRIPT END ---

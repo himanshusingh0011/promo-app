@@ -1,0 +1,149 @@
+EPISODE NUMBER: Episode 1
+EPISODE LOGLINE: Mara, a waitress at her ex-fiance's engagement party, is humiliated in front of the guests, until a stranger calls her by a name nobody has used in ten years.
+CONTINUITY NOTES: Made-up sample for testing.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. GRAND HOTEL BALLROOM - NIGHT
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Wide shot of a glittering ballroom, guests in evening wear raising glasses.
+
+**ACTION:**
+Start: (00:01.00) | End: (00:04.00)
+Mara, in a plain black waitress uniform, carries a tray of champagne through the crowd.
+
+**CAMERA:**
+Start: (00:03.00) | End: (00:05.00)
+Close-up on Mara's hands trembling on the tray.
+
+**VIVIAN (Mocking, Loud):**
+Start: (00:04.50) | End: (00:08.00)
+"Look, everyone. The girl Ethan dumped is serving our drinks."
+
+**CAMERA:**
+Start: (00:08.00) | End: (00:10.50)
+Medium shot of guests turning, laughing behind their hands.
+
+**MARA (Quiet, Steady):**
+Start: (00:09.00) | End: (00:11.00)
+"I'm just doing my job, Vivian."
+
+**ACTION:**
+Start: (00:11.50) | End: (00:13.50)
+Vivian grabs a glass from the tray and throws the champagne in Mara's face.
+
+**SOUND FX:**
+Start: (00:11.80) | End: (00:13.00)
+A sharp splash and a collective gasp from the guests.
+
+**CAMERA:**
+Start: (00:13.50) | End: (00:16.00)
+Close-up on Mara, champagne dripping from her chin.
+
+**VIVIAN (Cruel, Smug):**
+Start: (00:14.00) | End: (00:16.50)
+"Then do it on your knees. Clean it up."
+
+**CAMERA:**
+Start: (00:16.50) | End: (00:19.00)
+Medium shot of Ethan standing behind Vivian, saying nothing.
+
+**MARA (Hurt, Accusing):**
+Start: (00:17.00) | End: (00:19.50)
+"Ethan. You're just going to stand there?"
+
+**ETHAN (Cold, Dismissive):**
+Start: (00:20.00) | End: (00:23.00)
+"You were never part of my world, Mara."
+
+**CAMERA:**
+Start: (00:23.00) | End: (00:26.00)
+Close-up on Mara swallowing her tears.
+
+**ACTION:**
+Start: (00:24.00) | End: (00:28.00)
+Mara slowly kneels and begins picking up broken glass.
+
+**VIVIAN (Gloating):**
+Start: (00:28.50) | End: (00:30.50)
+"Good girl. Know your place."
+
+SCENE 02
+Scene heading: INT. GRAND HOTEL BALLROOM - CONTINUOUS
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:31.00) | End: (00:34.00)
+Wide shot as the ballroom doors swing open.
+
+**SOUND FX:**
+Start: (00:31.00) | End: (00:32.50)
+Heavy doors bang open; the music stops dead.
+
+**ACTION:**
+Start: (00:32.00) | End: (00:36.00)
+A tall man in a dark suit walks in, flanked by four bodyguards.
+
+**HOTEL MANAGER (Shocked, Whispering):**
+Start: (00:36.50) | End: (00:39.00)
+"That's Mr. Hale. He owns this hotel."
+
+**CAMERA:**
+Start: (00:39.00) | End: (00:43.00)
+Tracking shot following Hale as he walks straight past Ethan to Mara.
+
+**ACTION:**
+Start: (00:41.00) | End: (00:45.00)
+Hale kneels beside Mara and lifts her hand away from the broken glass.
+
+**HALE (Gentle, Firm):**
+Start: (00:45.50) | End: (00:47.00)
+"You've cut your hand."
+
+**VIVIAN (Confused, Indignant):**
+Start: (00:47.50) | End: (00:50.00)
+"Mr. Hale, she's just a waitress."
+
+**CAMERA:**
+Start: (00:50.00) | End: (00:52.50)
+Close-up on Hale turning his head toward Vivian, eyes cold.
+
+**HALE (Icy, Menacing):**
+Start: (00:51.00) | End: (00:56.00)
+"Speak to her like that again and you'll never set foot in this city again."
+
+**CAMERA:**
+Start: (00:56.00) | End: (00:58.00)
+Close-up on Ethan, pale and stunned.
+
+**ETHAN (Stunned):**
+Start: (00:57.00) | End: (00:59.00)
+"Why would you protect her?"
+
+**CAMERA:**
+Start: (00:59.00) | End: (01:02.00)
+Close-up on Hale helping Mara to her feet.
+
+**HALE (Quiet, Reverent):**
+Start: (01:00.00) | End: (01:02.00)
+"Because she's not a waitress."
+
+**HALE (Clear, Announcing):**
+Start: (01:02.50) | End: (01:05.00)
+"Welcome home, Miss Sterling."
+
+**SOUND FX:**
+Start: (01:05.00) | End: (01:07.00)
+A gasp ripples across the ballroom; an ominous low string sting.
+
+**CAMERA:**
+Start: (01:05.00) | End: (01:08.00)
+Extreme close-up on Mara's eyes widening. Cut to black.
+
+--- SCRIPT END ---

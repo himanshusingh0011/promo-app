@@ -1,0 +1,19 @@
+# Confidential: never commit screenplays or outputs made from them
+data/
+outputs/
+eval/runs/
+*.zip
+*.txt
+!requirements.txt
+!eval/README.txt
+
+# Secrets and caches
+.env
+.cache/
+__pycache__/
+*.pyc
+.vercel
+.claude/settings.local.json
+
+# made-up sample episodes (not Kuku content)
+!public/sample/*.txt
